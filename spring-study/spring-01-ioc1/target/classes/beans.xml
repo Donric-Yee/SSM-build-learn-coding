@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mysqlImpl" class="com.donric.dao.UserDaoMysqlImpl"/>
+    <bean id="daoImpl" class="com.donric.dao.UserDaoImpl"/>
+    <bean id="userServiceImpl" class="com.donric.service.UserServiceImpl">
+<!--        ref引用spring容器中已经创建好的对象
+            value就是一个具体的值，用于基本数据类型-->
+        <property name="userDao" ref="mysqlImpl"></property>
+    </bean>
+</beans>

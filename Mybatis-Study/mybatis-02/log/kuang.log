@@ -1,0 +1,24 @@
+[DEBUG][20-06-17][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][20-06-17][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][20-06-17][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][20-06-17][org.apache.ibatis.io.VFS]Class not found: org.jboss.vfs.VFS
+[DEBUG][20-06-17][org.apache.ibatis.io.JBoss6VFS]JBoss 6 VFS API is not available in this environment.
+[DEBUG][20-06-17][org.apache.ibatis.io.VFS]Class not found: org.jboss.vfs.VirtualFile
+[DEBUG][20-06-17][org.apache.ibatis.io.VFS]VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+[DEBUG][20-06-17][org.apache.ibatis.io.VFS]Using VFS adapter org.apache.ibatis.io.DefaultVFS
+[DEBUG][20-06-17][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][20-06-17][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][20-06-17][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][20-06-17][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][20-06-17][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][20-06-17][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1161667116.
+[DEBUG][20-06-17][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@453da22c]
+[DEBUG][20-06-17][com.donric.dao.UserMapper.getUserList]==>  Preparing: select * from user
+[DEBUG][20-06-17][com.donric.dao.UserMapper.getUserList]==> Parameters: 
+[DEBUG][20-06-17][com.donric.dao.UserMapper.getUserList]<==      Total: 4
+[DEBUG][20-06-17][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@453da22c]
+[DEBUG][20-06-17][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@453da22c]
+[DEBUG][20-06-17][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 1161667116 to pool.
+[INFO][20-06-17][com.donric.dao.UserMapperTest]info
+[DEBUG][20-06-17][com.donric.dao.UserMapperTest]debug
+[ERROR][20-06-17][com.donric.dao.UserMapperTest]error

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    DataSource:使用spring的数据源替换mybatis的配置 c3p0 dbcp
+        我们这里使用spring提供的jdbc-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://139.196.201.104:3306/mybatis?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"></property>
+        <property name="username" value= "root"></property>
+        <property name="password" value="Mumu9568"></property>
+    </bean>
+
+<!--    sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+
+<!--        绑定mybatis配置文件,这里所有mybatis-config的属性都能配置到
+            所以甚至可以省略mybatis-config-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:com/donric/mapper/*.xml"/>
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+<!--        只能通过构造器注入sqlSessionFactory,因为其没有set方法-->
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+
+    <bean id="userMapper" class="com.donric.mapper.UserMapperImpl">
+        <property name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+</beans>

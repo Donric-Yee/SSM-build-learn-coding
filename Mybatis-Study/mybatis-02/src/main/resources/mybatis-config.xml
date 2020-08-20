@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+<!--    标签都需要按顺序写-->
+<!--    引入外部配置文件-->
+<!--    <properties resource="db.properties"/>-->
+<!--优先读取properties自带的property，之后才会读取配置文件，两者之间会被覆盖，则配置文件会覆盖property-->
+    <properties resource="db.properties">
+        <property name="username" value="root"/>
+        <property name="password" value="Mumu9568"/>
+    </properties>
+
+<!--    还可以写<properties resources="">属性及对应值</properties>-->
+
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    
+    <typeAliases>
+<!--        单个定义-->
+        <typeAlias type="com.donric.pojo.User" alias="User"/>
+<!--        该包下的实体类直接使用其类名（首字母改为小写，这是规范，当然不该也可以）-->
+        <package name="dom.donric.pojo"/>
+    </typeAliases>
+
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/donric/dao/UserMapper.xml"/>
+    </mappers>
+</configuration>
